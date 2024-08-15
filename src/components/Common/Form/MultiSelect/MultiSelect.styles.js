@@ -2,7 +2,12 @@ import styled from "styled-components";
 
 const MultiSelectWrapper = styled.div`
   position: relative;
-  width: 300px;
+  width: 100%;
+  max-width: 100%;
+
+  @media (min-width: 768px) {
+    max-width: 300px;
+  }
   font-family: Arial, sans-serif;
 `;
 

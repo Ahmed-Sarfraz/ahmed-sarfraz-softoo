@@ -14,10 +14,12 @@ const ProductQuantity = () => {
 
   const [quantity, setQuantity] = useState(1);
 
-  const increaseQuantity = () => setQuantity(quantity + 1);
+  const increaseQuantity = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
   const decreaseQuantity = () => {
     if (quantity > 1) {
-      setQuantity(quantity - 1);
+      setQuantity((prevQuantity) => prevQuantity - 1);
     }
   };
   const resetQuantity = () => {

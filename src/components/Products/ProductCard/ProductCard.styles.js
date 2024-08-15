@@ -11,11 +11,15 @@ const CardContainer = styled.div`
 const CardWrapper = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    flex-direction: row; /* Switch to row on larger screens */
+  }
 `;
 
 const Card = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   box-sizing: border-box;
   padding: 16px;
@@ -24,6 +28,11 @@ const Card = styled.div`
   border: 1px solid #ddd;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  @media (min-width: 768px) {
+    flex-direction: row; /* Switch to row on larger screens */
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
 `;
 
 const CardImageWrapper = styled.div`

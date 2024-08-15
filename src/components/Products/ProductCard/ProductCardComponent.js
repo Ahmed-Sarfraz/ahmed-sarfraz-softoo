@@ -1,7 +1,7 @@
 import React from "react";
 import ProductCardContext from "../context/ProductCardContext";
 import ProductCard from "./ProductCard";
-import ProductQuantity from "../QuantityButton/ProductQuantity";
+import ProductQuantity from "../ProductQuantity/ProductQuantity";
 
 const ProductComponent = ({ product }) => {
   return (

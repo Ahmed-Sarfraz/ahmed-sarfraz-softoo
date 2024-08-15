@@ -4,10 +4,10 @@ export const QuantityButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: fit-content;
   margin-bottom: 16px;
   justify-content: space-evenly;
   padding: 6px;
+  gap: 8px;
 `;
 
 export const QuantityButtonElement = styled.button`

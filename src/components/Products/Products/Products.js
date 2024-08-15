@@ -4,7 +4,7 @@ import ApiDataRenderer from "../../Common/ApiDataRenderer";
 import { ProductsContext } from "../context/ProductsContext";
 import ProductsListing from "../ProductListing/ProductsListing";
 
-const ProductsStoreListing = ({ initialProducts }) => {
+const FilteredProductsList = ({ initialProducts }) => {
   const { products, setProducts, filter } = useContext(ProductsContext);
   useEffect(() => {
     setProducts(initialProducts);
@@ -20,16 +20,16 @@ const ProductsStoreListing = ({ initialProducts }) => {
   return <ProductsListing products={filteredProducts} />;
 };
 
-const ProductFetch = () => {
+const Products = () => {
   return (
     <ApiDataRenderer
       config={{
         url: ENDPOINTS.GET_ITEMS,
       }}
       renderData={(initialProducts) => (
-        <ProductsStoreListing initialProducts={initialProducts} />
+        <FilteredProductsList initialProducts={initialProducts} />
       )}
     />
   );
 };
-export default ProductFetch;
+export default Products;
