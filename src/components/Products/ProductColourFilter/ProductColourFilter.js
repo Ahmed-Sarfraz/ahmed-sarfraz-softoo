@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from "react";
+import { useContext, useMemo } from "react";
 import MultiSelect from "../../Common/Form/MultiSelect/MultiSelect";
 import { ProductsContext } from "../context/ProductsContext";
 

@@ -6,13 +6,11 @@ const PageWrapper = styled.div`
   min-height: 100vh;
 `;
 
-// Main content wrapper that includes content
 const MainWrapper = styled.div`
   display: flex;
   flex: 1;
 `;
 
-// Content section
 const ContentSection = styled.main`
   flex: 1;
   padding: 2rem;

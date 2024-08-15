@@ -1,4 +1,6 @@
-import React, { useContext, useState } from "react";
+import { useContext } from "react";
+import produce from "immer";
+
 import {
   QuantityButtonElement,
   QuantityButtonWrapper,
@@ -9,20 +11,31 @@ import { ProductsContext } from "../context/ProductsContext";
 import Button from "../../Common/Button/Button";
 
 const ProductQuantity = () => {
-  const { removeProduct } = useContext(ProductsContext);
-  const { id } = useContext(ProductCardContext);
+  const { removeProduct, setProducts } = useContext(ProductsContext);
+  const { id, quantity } = useContext(ProductCardContext);
 
-  const [quantity, setQuantity] = useState(1);
+  const updateItemQuantity = (newQuantity) => {
+    setProducts(
+      produce((draft) => {
+        const item = draft.find((item) => item.id === id);
+        if (item) {
+          item.quantity = newQuantity;
+        }
+      })
+    );
+  };
 
   const increaseQuantity = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1);
+    updateItemQuantity(quantity + 1);
   };
+
   const decreaseQuantity = () => {
     if (quantity > 1) {
-      setQuantity((prevQuantity) => prevQuantity - 1);
+      updateItemQuantity(quantity - 1);
     }
   };
-  const resetQuantity = () => {
+
+  const handleRemove = () => {
     removeProduct(id);
   };
 
@@ -37,7 +50,7 @@ const ProductQuantity = () => {
           +
         </QuantityButtonElement>
       </div>
-      <Button variant="danger" onClick={resetQuantity}>
+      <Button variant="danger" onClick={handleRemove}>
         Remove
       </Button>
     </QuantityButtonWrapper>

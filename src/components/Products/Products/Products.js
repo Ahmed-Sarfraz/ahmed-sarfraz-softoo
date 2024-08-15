@@ -7,12 +7,16 @@ import ProductsListing from "../ProductListing/ProductsListing";
 const FilteredProductsList = ({ initialProducts }) => {
   const { products, setProducts, filter } = useContext(ProductsContext);
   useEffect(() => {
-    setProducts(initialProducts);
+    const productsWithQuantities = initialProducts.map((item) => ({
+      ...item,
+      quantity: 1,
+    }));
+    setProducts(productsWithQuantities);
   }, [initialProducts]);
 
   const filteredProducts = useMemo(() => {
     if (filter.length === 0) {
-      return products; // No filters applied, return all products
+      return products;
     }
     return products.filter((product) => filter.includes(product.colour));
   }, [products, filter]);

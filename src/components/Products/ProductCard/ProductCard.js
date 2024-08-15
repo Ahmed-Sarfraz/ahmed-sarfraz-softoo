@@ -1,4 +1,3 @@
-import React from "react";
 import { Card } from "./ProductCard.styles";
 import ProductCardImage from "./Leaf/ProductCardImage";
 import ProductCardContent from "./Leaf/ProductCardContent";

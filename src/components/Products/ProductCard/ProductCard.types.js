@@ -17,5 +17,3 @@ ProductCard.Name.propTypes = {
 ProductCard.Price.propTypes = {
   children: PropTypes.node.isRequired,
 };
-
-// Define propTypes for other components as needed.

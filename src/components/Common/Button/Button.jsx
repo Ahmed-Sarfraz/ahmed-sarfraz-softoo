@@ -1,4 +1,3 @@
-import React from "react";
 import PropTypes from "prop-types";
 import StyledButton from "./Button.styles";
 
@@ -27,7 +26,6 @@ const Button = ({
   );
 };
 
-// Prop types for the Button component
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   variant: PropTypes.oneOf(["primary", "secondary", "danger", "success"]),

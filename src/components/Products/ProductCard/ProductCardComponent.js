@@ -1,4 +1,3 @@
-import React from "react";
 import ProductCardContext from "../context/ProductCardContext";
 import ProductCard from "./ProductCard";
 import ProductQuantity from "../ProductQuantity/ProductQuantity";
