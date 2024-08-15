@@ -4,11 +4,12 @@ const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin: 10px 0px;
+  gap: 8px;
 `;
 
 const CardWrapper = styled.div`
   width: 100%;
-  margin-bottom: 16px;
   display: flex;
 `;
 
@@ -22,6 +23,7 @@ const Card = styled.div`
   background-color: #fff;
   border: 1px solid #ddd;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 `;
 
 const CardImageWrapper = styled.div`
@@ -34,6 +36,7 @@ const CardImage = styled.img`
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 8px;
 `;
 
 const CardContent = styled.div`

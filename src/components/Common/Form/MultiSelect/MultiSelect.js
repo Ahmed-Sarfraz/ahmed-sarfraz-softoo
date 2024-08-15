@@ -1,24 +1,33 @@
 import { useState } from "react";
 import {
-  FilterDisplay,
-  FilterTitle,
-  MultiSelectContainer,
+  ClearButton,
+  Dropdown,
+  MultiSelectWrapper,
+  NoOptions,
+  Option,
+  Placeholder,
   RemoveIcon,
-  SelectedFilters,
+  SearchBox,
+  SelectBox,
   SelectedItem,
-  StyledSelect,
 } from "./MultiSelect.styles";
-
-const MultiSelect = ({ options, onChange = () => {} }) => {
+const MultiSelect = ({
+  options,
+  placeholder = "Select...",
+  onChange = () => {},
+}) => {
   const [selectedItems, setSelectedItems] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const handleSelectionChange = (e) => {
-    const selectedOptions = Array.from(
-      e.target.selectedOptions,
-      (option) => option.value
-    );
-    setSelectedItems(selectedOptions);
-    onChange(selectedOptions);
+  const toggleDropdown = () => setIsOpen(!isOpen);
+
+  const handleSelectItem = (item) => {
+    if (!selectedItems.includes(item)) {
+      const newSelectedItems = [...selectedItems, item];
+      setSelectedItems(newSelectedItems);
+      onChange(newSelectedItems);
+    }
   };
 
   const handleRemoveItem = (item) => {
@@ -27,38 +36,65 @@ const MultiSelect = ({ options, onChange = () => {} }) => {
     onChange(newSelectedItems);
   };
 
-  return (
-    <MultiSelectContainer>
-      <StyledSelect
-        multiple={true}
-        onChange={handleSelectionChange}
-        value={selectedItems}
-      >
-        {options.map((option) => (
-          <option key={option} value={option}>
-            {option}
-          </option>
-        ))}
-      </StyledSelect>
+  const filteredOptions = options.filter(
+    (option) =>
+      option.toLowerCase().includes(searchTerm.toLowerCase()) &&
+      !selectedItems.includes(option)
+  );
 
-      <FilterDisplay>
-        <FilterTitle>Selected Filters:</FilterTitle>
-        <SelectedFilters>
-          {selectedItems.length === 0 ? (
-            <span>No filters selected</span>
-          ) : (
-            selectedItems.map((item) => (
-              <SelectedItem key={item}>
-                {item}
-                <RemoveIcon onClick={() => handleRemoveItem(item)}>
-                  &times;
-                </RemoveIcon>
-              </SelectedItem>
+  const handleSearch = (e) => setSearchTerm(e.target.value);
+
+  const clearSelection = () => {
+    setSelectedItems([]);
+    onChange([]);
+  };
+
+  return (
+    <MultiSelectWrapper>
+      <SelectBox onClick={toggleDropdown}>
+        {selectedItems.length === 0 ? (
+          <Placeholder>{placeholder}</Placeholder>
+        ) : (
+          selectedItems.map((item) => (
+            <SelectedItem key={item}>
+              {item}
+              <RemoveIcon onClick={() => handleRemoveItem(item)}>
+                &times;
+              </RemoveIcon>
+            </SelectedItem>
+          ))
+        )}
+        {selectedItems.length > 0 && (
+          <ClearButton
+            onClick={(e) => {
+              e.stopPropagation();
+              clearSelection();
+            }}
+          >
+            Clear
+          </ClearButton>
+        )}
+      </SelectBox>
+      {isOpen && (
+        <Dropdown>
+          <SearchBox
+            type="text"
+            placeholder="Search..."
+            value={searchTerm}
+            onChange={handleSearch}
+          />
+          {filteredOptions.length > 0 ? (
+            filteredOptions.map((option) => (
+              <Option key={option} onClick={() => handleSelectItem(option)}>
+                {option}
+              </Option>
             ))
+          ) : (
+            <NoOptions>No options available</NoOptions>
           )}
-        </SelectedFilters>
-      </FilterDisplay>
-    </MultiSelectContainer>
+        </Dropdown>
+      )}
+    </MultiSelectWrapper>
   );
 };
 

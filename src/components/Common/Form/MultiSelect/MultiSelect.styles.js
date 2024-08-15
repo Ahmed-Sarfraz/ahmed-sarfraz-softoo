@@ -1,54 +1,28 @@
 import styled from "styled-components";
 
-const MultiSelectContainer = styled.div`
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
+const MultiSelectWrapper = styled.div`
+  position: relative;
+  width: 300px;
+  font-family: Arial, sans-serif;
 `;
 
-const StyledSelect = styled.select`
-  width: 300px;
-  height: 150px;
+const SelectBox = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   padding: 10px;
   background-color: #fff;
   border: 2px solid #ccc;
   border-radius: 8px;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  outline: none;
-
-  option {
-    padding: 10px;
-    font-size: 14px;
-  }
-`;
-
-const FilterDisplay = styled.div`
-  background-color: #f7f7f7;
-  padding: 10px;
-  border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  min-width: 200px;
-`;
-
-const FilterTitle = styled.div`
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 10px;
-`;
-
-const SelectedFilters = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
 `;
 
 const SelectedItem = styled.div`
   background-color: #007bff;
   color: #fff;
   padding: 5px 10px;
+  margin-right: 5px;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -60,12 +34,72 @@ const RemoveIcon = styled.span`
   cursor: pointer;
 `;
 
+const Dropdown = styled.div`
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  margin-top: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  max-height: 200px;
+  overflow-y: auto;
+`;
+
+const SearchBox = styled.input`
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+  box-sizing: border-box;
+`;
+
+const Option = styled.div`
+  padding: 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: #f4f4f4;
+  }
+`;
+
+const NoOptions = styled.div`
+  padding: 10px;
+  color: #999;
+  text-align: center;
+`;
+
+const Placeholder = styled.div`
+  color: #999;
+  font-size: 14px;
+  padding: 5px;
+`;
+
+const ClearButton = styled.button`
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 14px;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 export {
-  MultiSelectContainer,
-  StyledSelect,
-  RemoveIcon,
+  ClearButton,
+  Placeholder,
+  NoOptions,
+  Option,
+  SearchBox,
   SelectedItem,
-  SelectedFilters,
-  FilterTitle,
-  FilterDisplay,
+  SelectBox,
+  RemoveIcon,
+  Dropdown,
+  MultiSelectWrapper,
 };

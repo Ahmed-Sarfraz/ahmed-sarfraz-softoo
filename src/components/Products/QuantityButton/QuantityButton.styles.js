@@ -6,7 +6,7 @@ export const QuantityButtonWrapper = styled.div`
   align-items: center;
   width: fit-content;
   margin-bottom: 16px;
-  justify-content: space-around;
+  justify-content: space-evenly;
   padding: 6px;
 `;
 

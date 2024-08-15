@@ -1,15 +1,10 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useState } from "react";
 
 export const ProductsContext = createContext();
 
-export const ProductsProvider = ({ children, initialProducts }) => {
-  const [filter, setFilter] = useState(null);
+export const ProductsProvider = ({ children, initialProducts = [] }) => {
+  const [filter, setFilter] = useState([]);
   const [products, setProducts] = useState(initialProducts);
-  useEffect(() => {
-    setProducts((prevProducts) =>
-      prevProducts.filter((product) => product.colour === filter)
-    );
-  }, [filter]);
 
   const removeProduct = (id) => {
     setProducts((prevProducts) =>
@@ -19,7 +14,7 @@ export const ProductsProvider = ({ children, initialProducts }) => {
 
   return (
     <ProductsContext.Provider
-      value={{ products, setProducts, removeProduct, setFilter }}
+      value={{ products, setProducts, removeProduct, setFilter, filter }}
     >
       {children}
     </ProductsContext.Provider>
