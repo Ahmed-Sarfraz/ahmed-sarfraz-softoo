@@ -1,7 +1,7 @@
 import { ContentSection, MainWrapper, PageWrapper } from "./Layout.styles";
 import PropTypes from "prop-types";
 
-function Layout({ children }) {
+function Layout({ children = null }) {
   return (
     <PageWrapper>
       <MainWrapper>
@@ -10,10 +10,6 @@ function Layout({ children }) {
     </PageWrapper>
   );
 }
-
-Layout.defaultProps = {
-  children: null,
-};
 
 Layout.propTypes = {
   children: PropTypes.node,

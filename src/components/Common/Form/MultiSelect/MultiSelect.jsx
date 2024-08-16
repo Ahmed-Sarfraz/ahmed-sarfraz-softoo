@@ -12,7 +12,13 @@ import {
   SelectBox,
   SelectedItem,
 } from "./MultiSelect.styles";
-const MultiSelect = ({ options, placeholder, onChange, ...props }) => {
+
+const MultiSelect = ({
+  options = [],
+  placeholder = "Select...",
+  onChange = () => {},
+  ...props
+}) => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
@@ -98,12 +104,6 @@ const MultiSelect = ({ options, placeholder, onChange, ...props }) => {
       )}
     </MultiSelectWrapper>
   );
-};
-
-MultiSelect.defaultProps = {
-  options: [],
-  placeholder: "Select...",
-  onChange: () => {},
 };
 
 MultiSelect.propTypes = {

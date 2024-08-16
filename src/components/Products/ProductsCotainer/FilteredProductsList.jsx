@@ -4,7 +4,7 @@ import ProductsListing from "../ProductListing/ProductsListing";
 import PropTypes from "prop-types";
 import { productPropTypes } from "../ProductCard/productPropTypes";
 
-const FilteredProductsList = ({ initialProducts }) => {
+const FilteredProductsList = ({ initialProducts = [] }) => {
   const { products, setProducts, filter } = useContext(ProductsContext);
   useEffect(() => {
     const productsWithQuantities = initialProducts.map((item) => ({
@@ -24,12 +24,8 @@ const FilteredProductsList = ({ initialProducts }) => {
   return <ProductsListing products={filteredProducts} />;
 };
 
-ProductsListing.defaultProps = {
-  products: [],
-};
-
 ProductsListing.propTypes = {
-  products: PropTypes.arrayOf(productPropTypes).isRequired,
+  initialProducts: PropTypes.arrayOf(productPropTypes).isRequired,
 };
 
 export default FilteredProductsList;

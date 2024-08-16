@@ -23,10 +23,6 @@ export const ProductsProvider = ({ children, initialProducts = [] }) => {
   );
 };
 
-ProductsProvider.defaultProps = {
-  initialProducts: [],
-};
-
 ProductsProvider.propTypes = {
   children: PropTypes.node.isRequired,
   initialProducts: PropTypes.arrayOf(productPropTypes).isRequired,
