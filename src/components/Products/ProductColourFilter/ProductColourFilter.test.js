@@ -28,7 +28,6 @@ test("displays the correct products when filter is applied", () => {
 
   // Check that product-1 and product-3 are found
   mockProducts.forEach((p) => {
-    console.log(blackOption.textContent, "blackOption.value");
     if (p.colour === blackOption.textContent) {
       expect(screen.getByTestId(`product-${p.id}`)).toBeInTheDocument();
     } else {
