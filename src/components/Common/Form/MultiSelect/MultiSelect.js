@@ -15,6 +15,7 @@ const MultiSelect = ({
   options,
   placeholder = "Select...",
   onChange = () => {},
+  ...props
 }) => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -51,9 +52,9 @@ const MultiSelect = ({
 
   return (
     <MultiSelectWrapper>
-      <SelectBox onClick={toggleDropdown}>
+      <SelectBox onClick={toggleDropdown} {...props}>
         {selectedItems.length === 0 ? (
-          <Placeholder>{placeholder}</Placeholder>
+          <Placeholder data-testid={placeholder}>{placeholder}</Placeholder>
         ) : (
           selectedItems.map((item) => (
             <SelectedItem key={item}>
@@ -66,6 +67,7 @@ const MultiSelect = ({
         )}
         {selectedItems.length > 0 && (
           <ClearButton
+            data-testid="clear-selected"
             onClick={(e) => {
               e.stopPropagation();
               clearSelection();
@@ -76,7 +78,7 @@ const MultiSelect = ({
         )}
       </SelectBox>
       {isOpen && (
-        <Dropdown>
+        <Dropdown data-testid="select-dropdown">
           <SearchBox
             type="text"
             placeholder="Search..."
@@ -85,7 +87,11 @@ const MultiSelect = ({
           />
           {filteredOptions.length > 0 ? (
             filteredOptions.map((option) => (
-              <Option key={option} onClick={() => handleSelectItem(option)}>
+              <Option
+                data-testid={`option-${option}`}
+                key={option}
+                onClick={() => handleSelectItem(option)}
+              >
                 {option}
               </Option>
             ))

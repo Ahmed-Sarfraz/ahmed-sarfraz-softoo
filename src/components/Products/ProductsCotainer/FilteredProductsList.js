@@ -1,6 +1,4 @@
 import { useContext, useEffect, useMemo } from "react";
-import { ENDPOINTS } from "../../../middleware/url";
-import ApiDataRenderer from "../../Common/ApiDataRenderer";
 import { ProductsContext } from "../context/ProductsContext";
 import ProductsListing from "../ProductListing/ProductsListing";
 
@@ -24,16 +22,4 @@ const FilteredProductsList = ({ initialProducts }) => {
   return <ProductsListing products={filteredProducts} />;
 };
 
-const Products = () => {
-  return (
-    <ApiDataRenderer
-      config={{
-        url: ENDPOINTS.GET_ITEMS,
-      }}
-      renderData={(initialProducts) => (
-        <FilteredProductsList initialProducts={initialProducts} />
-      )}
-    />
-  );
-};
-export default Products;
+export default FilteredProductsList;

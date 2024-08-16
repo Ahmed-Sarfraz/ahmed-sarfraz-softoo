@@ -9,13 +9,15 @@ export default function ProductColourFilter() {
     () => [...new Set(products.map((product) => product.colour))],
     [products]
   );
+  if (!products.length) return null;
 
   const handleFilterChange = (options) => {
     setFilter(options);
   };
   return (
     <MultiSelect
-      placeholder="Select color"
+      data-testid="filter-colour"
+      placeholder="Select colour"
       options={colourFilters}
       onChange={handleFilterChange}
     />

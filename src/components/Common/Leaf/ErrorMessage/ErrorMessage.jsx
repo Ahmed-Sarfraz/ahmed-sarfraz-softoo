@@ -4,7 +4,7 @@ export default function ErrorMessage({ message }) {
   return (
     <ErrorContainer>
       <ErrorIcon>⚠️</ErrorIcon>
-      <ErrorText>Error: {message}</ErrorText>
+      <ErrorText data-testid="error-message">Error: {message}</ErrorText>
     </ErrorContainer>
   );
 }

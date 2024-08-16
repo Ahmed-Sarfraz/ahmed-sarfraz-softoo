@@ -1,18 +1,11 @@
 import "./App.css";
 import Layout from "./components/Common/Layout/Layout";
-import { ProductsProvider } from "./components/Products/context/ProductsContext";
-import ProductColourFilter from "./components/Products/ProductColourFilter/ProductColourFilter";
-import TotalQuantity from "./components/Products/ProductQuantity/TotalQuantity";
-import Products from "./components/Products/Products/Products";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <Layout>
-      <ProductsProvider>
-        <ProductColourFilter />
-        <Products />
-        <TotalQuantity />
-      </ProductsProvider>
+      <Home />
     </Layout>
   );
 }

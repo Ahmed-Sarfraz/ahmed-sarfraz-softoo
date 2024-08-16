@@ -42,15 +42,25 @@ const ProductQuantity = () => {
   return (
     <QuantityButtonWrapper>
       <div style={{ display: "flex" }}>
-        <QuantityButtonElement onClick={decreaseQuantity}>
+        <QuantityButtonElement
+          data-testid={`decrease-${id}`}
+          onClick={decreaseQuantity}
+        >
           -
         </QuantityButtonElement>
         <QuantityDisplay>{quantity}</QuantityDisplay>
-        <QuantityButtonElement onClick={increaseQuantity}>
+        <QuantityButtonElement
+          data-testid={`increase-${id}`}
+          onClick={increaseQuantity}
+        >
           +
         </QuantityButtonElement>
       </div>
-      <Button variant="danger" onClick={handleRemove}>
+      <Button
+        data-testid={`remove-${id}`}
+        variant="danger"
+        onClick={handleRemove}
+      >
         Remove
       </Button>
     </QuantityButtonWrapper>
