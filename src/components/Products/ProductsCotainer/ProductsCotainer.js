@@ -1,5 +1,5 @@
 import { ENDPOINTS } from "../../../middleware/url";
-import ApiDataRenderer from "../../Common/ApiDataRenderer";
+import ApiDataRenderer from "../../Common/HOC/ApiDataRenderer";
 import FilteredProductsList from "./FilteredProductsList";
 
 const ProductsCotainer = () => {
