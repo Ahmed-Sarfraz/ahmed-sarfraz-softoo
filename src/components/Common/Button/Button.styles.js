@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 const StyledButton = styled.button`
   display: inline-flex;
@@ -115,6 +115,24 @@ const StyledButton = styled.button`
   &:active {
     transform: scale(0.98);
   }
+`;
+
+const spin = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
+
+export const Spinner = styled.div`
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  animation: ${spin} 0.6s linear infinite;
 `;
 
 export default StyledButton;

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import StyledButton from "./Button.styles";
+import StyledButton, { Spinner } from "./Button.styles";
 
 const Button = ({
   children,
@@ -21,7 +21,7 @@ const Button = ({
       loading={loading}
       {...props}
     >
-      {loading ? "Loading..." : children}
+      {loading ? <Spinner /> : children}
     </StyledButton>
   );
 };
