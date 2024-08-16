@@ -1,7 +1,8 @@
 import NoProductsMessage from "../../Common/Leaf/NoProductsMessage/NoProductsMessage";
 import { CardContainer, CardWrapper } from "../ProductCard/ProductCard.styles";
 import ProductComponent from "../ProductCard/ProductCardComponent";
-
+import { productPropTypes } from "../ProductCard/productPropTypes";
+import PropTypes from "prop-types";
 export default function ProductsListing({ products }) {
   if (!products.length) return <NoProductsMessage />;
   return (
@@ -14,3 +15,10 @@ export default function ProductsListing({ products }) {
     </CardContainer>
   );
 }
+ProductsListing.defaultProps = {
+  products: [],
+};
+
+ProductsListing.propTypes = {
+  products: PropTypes.arrayOf(productPropTypes).isRequired,
+};

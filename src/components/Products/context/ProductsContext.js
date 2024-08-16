@@ -1,4 +1,6 @@
 import { createContext, useState } from "react";
+import PropTypes from "prop-types";
+import { productPropTypes } from "../ProductCard/productPropTypes";
 
 export const ProductsContext = createContext();
 
@@ -19,4 +21,13 @@ export const ProductsProvider = ({ children, initialProducts = [] }) => {
       {children}
     </ProductsContext.Provider>
   );
+};
+
+ProductsProvider.defaultProps = {
+  initialProducts: [],
+};
+
+ProductsProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+  initialProducts: PropTypes.arrayOf(productPropTypes).isRequired,
 };

@@ -1,4 +1,5 @@
 import { ErrorContainer, ErrorIcon, ErrorText } from "./ErrorMessage.styles";
+import PropTypes from "prop-types";
 
 export default function ErrorMessage({ message }) {
   return (
@@ -8,3 +9,10 @@ export default function ErrorMessage({ message }) {
     </ErrorContainer>
   );
 }
+ErrorMessage.defaultProps = {
+  message: "An error occurred",
+};
+
+ErrorMessage.propTypes = {
+  message: PropTypes.string,
+};

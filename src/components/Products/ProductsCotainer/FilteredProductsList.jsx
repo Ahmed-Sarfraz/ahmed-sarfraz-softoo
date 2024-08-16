@@ -1,6 +1,8 @@
 import { useContext, useEffect, useMemo } from "react";
 import { ProductsContext } from "../context/ProductsContext";
 import ProductsListing from "../ProductListing/ProductsListing";
+import PropTypes from "prop-types";
+import { productPropTypes } from "../ProductCard/productPropTypes";
 
 const FilteredProductsList = ({ initialProducts }) => {
   const { products, setProducts, filter } = useContext(ProductsContext);
@@ -20,6 +22,14 @@ const FilteredProductsList = ({ initialProducts }) => {
   }, [products, filter]);
 
   return <ProductsListing products={filteredProducts} />;
+};
+
+ProductsListing.defaultProps = {
+  products: [],
+};
+
+ProductsListing.propTypes = {
+  products: PropTypes.arrayOf(productPropTypes).isRequired,
 };
 
 export default FilteredProductsList;

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import {
   ClearButton,
   Dropdown,
@@ -11,12 +12,7 @@ import {
   SelectBox,
   SelectedItem,
 } from "./MultiSelect.styles";
-const MultiSelect = ({
-  options,
-  placeholder = "Select...",
-  onChange = () => {},
-  ...props
-}) => {
+const MultiSelect = ({ options, placeholder, onChange, ...props }) => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
@@ -102,6 +98,18 @@ const MultiSelect = ({
       )}
     </MultiSelectWrapper>
   );
+};
+
+MultiSelect.defaultProps = {
+  options: [],
+  placeholder: "Select...",
+  onChange: () => {},
+};
+
+MultiSelect.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string),
+  placeholder: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
 export default MultiSelect;
