@@ -7,37 +7,14 @@ import {
   QuantityDisplay,
 } from "./QuantityButton.styles";
 import ProductCardContext from "../context/ProductCardContext";
-import { ProductsContext } from "../context/ProductsContext";
 import Button from "../../Common/Button/Button";
+import useProductQuantity from "./hooks/useProductQuantity";
 
 const ProductQuantity = () => {
-  const { removeProduct, setProducts } = useContext(ProductsContext);
   const { id, quantity } = useContext(ProductCardContext);
 
-  const updateItemQuantity = (newQuantity) => {
-    setProducts(
-      produce((draft) => {
-        const item = draft.find((item) => item.id === id);
-        if (item) {
-          item.quantity = newQuantity;
-        }
-      })
-    );
-  };
-
-  const increaseQuantity = () => {
-    updateItemQuantity(quantity + 1);
-  };
-
-  const decreaseQuantity = () => {
-    if (quantity > 1) {
-      updateItemQuantity(quantity - 1);
-    }
-  };
-
-  const handleRemove = () => {
-    removeProduct(id);
-  };
+  const { increaseQuantity, decreaseQuantity, handleRemove } =
+    useProductQuantity(id, quantity);
 
   return (
     <QuantityButtonWrapper>
