@@ -1,7 +1,7 @@
 import React from "react";
-import ProductCard from "./ProductCard";
-import ProductQuantity from "../ProductQuantity/ProductQuantity";
-import ProductCardContext from "../context/ProductCardContext";
+import ProductCardContext from "src/components/Products/context/ProductCardContext";
+import ProductCard from "src/components/Products/ProductCard/ProductCard";
+import ProductQuantity from "src/components/Products/ProductQuantity/ProductQuantity";
 import Product from "src/interfaces/Product";
 
 type ProductComponentProps = {

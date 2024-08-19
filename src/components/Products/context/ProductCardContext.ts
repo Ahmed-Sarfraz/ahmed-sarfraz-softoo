@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import Product from "../../../interfaces/Product";
+import Product from "src/interfaces/Product";
 
 const ProductCardContext = createContext<Product | null>(null);
 

@@ -1,10 +1,7 @@
-import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
+import mockProducts, { mockProductsTotalPrice } from "src/mocks/mockProducts";
 import { ProductsProvider } from "../context/ProductsContext";
-import mockProducts, {
-  mockProductsTotalPrice,
-} from "../../../mocks/mockProducts";
 import FilteredProductsList from "../ProductsCotainer/FilteredProductsList";
 import TotalQuantity from "./TotalQuantity";
 

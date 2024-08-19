@@ -1,5 +1,8 @@
-import React from "react";
-import { ErrorContainer, ErrorIcon, ErrorText } from "./ErrorMessage.styles";
+import {
+  ErrorContainer,
+  ErrorIcon,
+  ErrorText,
+} from "src/components/Common/Leaf/ErrorMessage/ErrorMessage.styles";
 
 type ErrorMessageProps = {
   message?: string;

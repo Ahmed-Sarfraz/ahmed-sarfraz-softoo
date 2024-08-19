@@ -1,8 +1,8 @@
 import { useContext, useMemo } from "react";
-import MultiSelect from "../../Common/Form/MultiSelect/MultiSelect";
-import { ProductsContext } from "../context/ProductsContext";
-import { getUniquePropertyValues } from "../../../utils/helpers";
+import MultiSelect from "src/components/Common/Form/MultiSelect/MultiSelect";
+import { ProductsContext } from "src/components/Products/context/ProductsContext";
 import { ProductsContextType } from "src/components/Products/context/types";
+import { getUniquePropertyValues } from "src/utils/helpers";
 
 export default function ProductColourFilter() {
   const { setFilter, products } = useContext(

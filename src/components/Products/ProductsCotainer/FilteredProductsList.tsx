@@ -1,8 +1,8 @@
 import { useContext, useEffect, useMemo } from "react";
-import ProductsListing from "../ProductListing/ProductsListing";
 import Product from "src/interfaces/Product";
 import { ProductsContext } from "src/components/Products/context/ProductsContext";
 import { ProductsContextType } from "src/components/Products/context/types";
+import ProductsListing from "src/components/Products/ProductListing/ProductsListing";
 
 type FilteredProductsListProps = {
   initialProducts: Product[];

@@ -1,6 +1,6 @@
+import Layout from "src/components/Common/Layout/Layout";
 import "./App.css";
-import Layout from "./components/Common/Layout/Layout";
-import Home from "./pages/Home";
+import Home from "src/pages/Home";
 
 function App() {
   return (

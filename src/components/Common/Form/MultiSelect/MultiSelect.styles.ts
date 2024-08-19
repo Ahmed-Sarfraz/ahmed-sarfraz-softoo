@@ -1,8 +1,5 @@
+import { ButtonProps, InputProps } from "src/interfaces/FormElementsProps";
 import styled from "styled-components";
-import {
-  ButtonProps,
-  InputProps,
-} from "../../../../interfaces/FormElementsProps";
 
 const MultiSelectWrapper = styled.div`
   position: relative;

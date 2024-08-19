@@ -1,9 +1,9 @@
-import { Card } from "./ProductCard.styles";
-import ProductCardImage from "./Leaf/ProductCardImage";
-import ProductCardContent from "./Leaf/ProductCardContent";
-import ProductCardName from "./Leaf/ProductCardName";
-import ProductCardPrice from "./Leaf/ProductCardPrice";
-import ProductCardColourComponent from "./Leaf/ProductCardColour/ProductCardColourComponent";
+import ProductCardColourComponent from "src/components/Products/ProductCard/Leaf/ProductCardColour/ProductCardColourComponent";
+import ProductCardContent from "src/components/Products/ProductCard/Leaf/ProductCardContent";
+import ProductCardImage from "src/components/Products/ProductCard/Leaf/ProductCardImage";
+import ProductCardName from "src/components/Products/ProductCard/Leaf/ProductCardName";
+import ProductCardPrice from "src/components/Products/ProductCard/Leaf/ProductCardPrice";
+import { Card } from "src/components/Products/ProductCard/ProductCard.styles";
 import ChildrenNodeProps from "src/interfaces/ChildrenNodeProps";
 
 const ProductCard: React.FC<ChildrenNodeProps> & {

@@ -1,7 +1,7 @@
+import ApiDataRenderer from "src/components/Common/HOC/ApiDataRenderer";
+import FilteredProductsList from "src/components/Products/ProductsCotainer/FilteredProductsList";
 import Product from "src/interfaces/Product";
-import { ENDPOINTS } from "../../../middleware/url";
-import ApiDataRenderer from "../../Common/HOC/ApiDataRenderer";
-import FilteredProductsList from "./FilteredProductsList";
+import { ENDPOINTS } from "src/middleware/url";
 
 const ProductsCotainer = () => {
   return (

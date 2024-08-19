@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyledDropdown } from "./MultiSelect.styles";
+import { StyledDropdown } from "src/components/Common/Form/MultiSelect/MultiSelect.styles";
 import ChildrenNodeProps from "src/interfaces/ChildrenNodeProps";
 
 type State = {

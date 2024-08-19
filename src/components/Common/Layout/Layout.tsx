@@ -1,6 +1,10 @@
 import React from "react";
-import { ContentSection, MainWrapper, PageWrapper } from "./Layout.styles";
-import ChildrenNodeProps from "../../../interfaces/ChildrenNodeProps";
+import {
+  ContentSection,
+  MainWrapper,
+  PageWrapper,
+} from "src/components/Common/Layout/Layout.styles";
+import ChildrenNodeProps from "src/interfaces/ChildrenNodeProps";
 
 const Layout: React.FC<ChildrenNodeProps> = ({ children = null }) => {
   return (

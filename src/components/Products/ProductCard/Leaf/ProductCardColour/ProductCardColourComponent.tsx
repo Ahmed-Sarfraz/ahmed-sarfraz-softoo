@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import ProductCardContext from "../../../context/ProductCardContext";
-import ProductCardColour from "./ProductCardColour";
+import ProductCardContext from "src/components/Products/context/ProductCardContext";
+import ProductCardColour from "src/components/Products/ProductCard/Leaf/ProductCardColour/ProductCardColour";
 
 const ProductCardColourComponent = () => {
   const product = useContext(ProductCardContext);

@@ -3,8 +3,8 @@ import {
   ProductColorBox,
   ProductColorText,
   ProductColorWrapper,
-} from "./ProductCardColour.styles";
-import ChildrenNodeProps from "../../../../../interfaces/ChildrenNodeProps";
+} from "src/components/Products/ProductCard/Leaf/ProductCardColour/ProductCardColour.styles";
+import ChildrenNodeProps from "src/interfaces/ChildrenNodeProps";
 
 interface ProductCardColourProps extends React.FC<ChildrenNodeProps> {
   Text: typeof ProductColorText;

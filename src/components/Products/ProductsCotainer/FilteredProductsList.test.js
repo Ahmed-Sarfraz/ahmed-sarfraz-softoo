@@ -1,9 +1,7 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
 import FilteredProductsList from "./FilteredProductsList";
-import mockProducts from "../../../mocks/mockProducts";
 import { ProductsProvider } from "../context/ProductsContext";
-import ProductColourFilter from "../ProductColourFilter/ProductColourFilter";
+import mockProducts from "src/mocks/mockProducts";
 
 describe("FilteredProductsList Component", () => {
   it("should display NoProductsMessage when no products are available", () => {

@@ -1,7 +1,9 @@
 import { FC } from "react";
-import StyledButton, { Spinner } from "./Button.styles";
-import StyledButtonProps from "../../../interfaces/StyledButtonProps";
+import StyledButton, {
+  ButtonSpinner,
+} from "src/components/Common/Button/Button.styles";
 import ChildrenNodeProps from "src/interfaces/ChildrenNodeProps";
+import StyledButtonProps from "src/interfaces/StyledButtonProps";
 
 enum ButtonVariant {
   Primary = "primary",
@@ -36,7 +38,7 @@ const Button: FC<StyledButtonProps & ChildrenNodeProps> = ({
       loading={loading}
       {...props}
     >
-      {loading ? <Spinner /> : children}
+      {loading ? <ButtonSpinner /> : children}
     </StyledButton>
   );
 };

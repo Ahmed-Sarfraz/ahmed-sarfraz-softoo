@@ -1,6 +1,6 @@
 import Axios, { AxiosResponse } from "axios";
-import { REQUEST_TYPES, BASE_URL } from "./url";
-import AxiosApiCallerConfig from "../interfaces/AxiosApiCallerConfig";
+import AxiosApiCallerConfig from "src/interfaces/AxiosApiCallerConfig";
+import { BASE_URL, REQUEST_TYPES } from "src/middleware/url";
 
 export function axiosApiCaller({
   method = REQUEST_TYPES.GET,

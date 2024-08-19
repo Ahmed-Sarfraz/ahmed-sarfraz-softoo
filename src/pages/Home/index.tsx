@@ -1,8 +1,7 @@
-import React from "react";
-import { ProductsProvider } from "../../components/Products/context/ProductsContext";
-import ProductColourFilter from "../../components/Products/ProductColourFilter/ProductColourFilter";
-import ProductsCotainer from "../../components/Products/ProductsCotainer/ProductsCotainer";
-import TotalQuantity from "../../components/Products/ProductQuantity/TotalQuantity";
+import { ProductsProvider } from "src/components/Products/context/ProductsContext";
+import ProductColourFilter from "src/components/Products/ProductColourFilter/ProductColourFilter";
+import TotalQuantity from "src/components/Products/ProductQuantity/TotalQuantity";
+import ProductsCotainer from "src/components/Products/ProductsCotainer/ProductsCotainer";
 
 const Home = () => {
   return (

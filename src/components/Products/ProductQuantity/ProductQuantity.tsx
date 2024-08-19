@@ -1,13 +1,12 @@
 import React, { useContext } from "react";
-
+import Button from "src/components/Common/Button/Button";
+import ProductCardContext from "src/components/Products/context/ProductCardContext";
+import useProductQuantity from "src/components/Products/ProductQuantity/hooks/useProductQuantity";
 import {
   QuantityButtonElement,
   QuantityButtonWrapper,
   QuantityDisplay,
-} from "./QuantityButton.styles";
-import ProductCardContext from "../context/ProductCardContext";
-import Button from "../../Common/Button/Button";
-import useProductQuantity from "./hooks/useProductQuantity";
+} from "src/components/Products/ProductQuantity/QuantityButton.styles";
 import Product from "src/interfaces/Product";
 
 const ProductQuantity = () => {

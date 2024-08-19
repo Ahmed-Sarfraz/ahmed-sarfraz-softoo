@@ -1,5 +1,7 @@
-import React from "react";
-import { Spinner, SpinnerContainer } from "./LoadingSpinner.styles";
+import {
+  Spinner,
+  SpinnerContainer,
+} from "src/components/Common/Leaf/LoadingSpinner/LoadingSpinner.styles";
 
 const LoadingSpinner = () => {
   return (

@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { ProductName } from "../ProductCard.styles";
-import ProductCardContext from "../../context/ProductCardContext";
+import ProductCardContext from "src/components/Products/context/ProductCardContext";
+import { ProductName } from "src/components/Products/ProductCard/ProductCard.styles";
 
 const ProductCardName = () => {
   const product = useContext(ProductCardContext);

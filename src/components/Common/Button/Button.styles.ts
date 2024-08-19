@@ -127,7 +127,7 @@ const spin = keyframes`
   }
 `;
 
-export const Spinner = styled.div`
+export const ButtonSpinner = styled.div`
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-top: 2px solid white;
   border-radius: 50%;

@@ -1,4 +1,6 @@
 import React, { ElementRef, useRef, useState } from "react";
+import Dropdown from "src/components/Common/Form/MultiSelect/Dropdown";
+
 import {
   ClearButton,
   MultiSelectWrapper,
@@ -9,8 +11,7 @@ import {
   SearchBox,
   SelectBox,
   SelectedItem,
-} from "./MultiSelect.styles";
-import Dropdown from "./Dropdown";
+} from "src/components/Common/Form/MultiSelect/MultiSelect.styles";
 
 type MultiSelectProps = {
   options?: string[];

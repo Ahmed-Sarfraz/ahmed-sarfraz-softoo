@@ -1,7 +1,7 @@
-import useFetch from "../../../hooks/useFetch";
-import AxiosApiCallerConfig from "../../../interfaces/AxiosApiCallerConfig";
-import ErrorMessage from "../Leaf/ErrorMessage/ErrorMessage";
+import ErrorMessage from "src/components/Common/Leaf/ErrorMessage/ErrorMessage";
 import LoadingSpinner from "src/components/Common/Leaf/LoadingSpinner/LoadingSpinner";
+import useFetch from "src/hooks/useFetch";
+import AxiosApiCallerConfig from "src/interfaces/AxiosApiCallerConfig";
 
 interface ApiDataRendererProps<T> {
   config: AxiosApiCallerConfig;

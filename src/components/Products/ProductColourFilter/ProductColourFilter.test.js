@@ -1,10 +1,9 @@
 /* eslint-disable jest/no-conditional-expect */
-import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import FilteredProductsList from "../ProductsCotainer/FilteredProductsList";
 import { ProductsProvider } from "../context/ProductsContext";
-import mockProducts from "../../../mocks/mockProducts";
 import ProductColourFilter from "./ProductColourFilter";
+import FilteredProductsList from "../ProductsCotainer/FilteredProductsList";
+import mockProducts from "src/mocks/mockProducts";
 
 test("displays the correct products when filter is applied", () => {
   render(

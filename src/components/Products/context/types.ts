@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import Product from "../../../interfaces/Product";
+import Product from "src/interfaces/Product";
 
 export type ProductsContextType = {
   products: Product[];

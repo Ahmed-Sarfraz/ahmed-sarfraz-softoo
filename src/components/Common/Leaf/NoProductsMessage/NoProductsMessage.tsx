@@ -1,9 +1,8 @@
-import React from "react";
 import {
   MessageContainer,
   MessageIcon,
   MessageText,
-} from "./NoProductsMessage.styles";
+} from "src/components/Common/Leaf/NoProductsMessage/NoProductsMessage.styles";
 
 const NoProductsMessage = () => {
   return (

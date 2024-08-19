@@ -1,6 +1,9 @@
 import React, { createContext, useState } from "react";
-import Product from "../../../interfaces/Product";
-import { ProductsContextType, ProductsProviderProps } from "./types";
+import {
+  ProductsContextType,
+  ProductsProviderProps,
+} from "src/components/Products/context/types";
+import Product from "src/interfaces/Product";
 
 export const ProductsContext = createContext<ProductsContextType | null>(null);
 

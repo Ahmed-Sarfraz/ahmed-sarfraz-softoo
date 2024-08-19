@@ -1,4 +1,4 @@
-import { ButtonProps } from "./FormElementsProps";
+import { ButtonProps } from "src/interfaces/FormElementsProps";
 
 interface StyledButtonProps extends ButtonProps {
   size?: "small" | "medium" | "large";

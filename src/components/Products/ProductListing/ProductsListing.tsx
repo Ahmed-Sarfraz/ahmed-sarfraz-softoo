@@ -1,7 +1,10 @@
 import React from "react";
-import NoProductsMessage from "../../Common/Leaf/NoProductsMessage/NoProductsMessage";
-import { CardContainer, CardWrapper } from "../ProductCard/ProductCard.styles";
-import ProductComponent from "../ProductCard/ProductCardComponent";
+import NoProductsMessage from "src/components/Common/Leaf/NoProductsMessage/NoProductsMessage";
+import {
+  CardContainer,
+  CardWrapper,
+} from "src/components/Products/ProductCard/ProductCard.styles";
+import ProductComponent from "src/components/Products/ProductCard/ProductCardComponent";
 import Product from "src/interfaces/Product";
 
 type ProductsListingProps = {

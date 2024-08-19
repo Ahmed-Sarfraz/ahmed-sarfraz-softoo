@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { axiosApiCaller } from "../middleware/api-caller";
-import useDeepCompareEffect from "./useDeepCompareEffect";
-import AxiosApiCallerConfig from "../interfaces/AxiosApiCallerConfig";
+import useDeepCompareEffect from "src/hooks/useDeepCompareEffect";
+import AxiosApiCallerConfig from "src/interfaces/AxiosApiCallerConfig";
+import { axiosApiCaller } from "src/middleware/api-caller";
 
 const useFetch = <T = any>(
   apiConfig: AxiosApiCallerConfig
