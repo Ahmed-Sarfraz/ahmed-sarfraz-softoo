@@ -1,3 +1,4 @@
+import { ButtonProps } from "src/interfaces/FormElementsProps";
 import styled from "styled-components";
 
 export const QuantityButtonWrapper = styled.div`
@@ -10,7 +11,7 @@ export const QuantityButtonWrapper = styled.div`
   gap: 8px;
 `;
 
-export const QuantityButtonElement = styled.button`
+export const QuantityButtonElement = styled.button<ButtonProps>`
   background-color: #f0f0f0;
   border: none;
   padding: 10px 15px;

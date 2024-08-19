@@ -1,4 +1,4 @@
-import { ReactNode, FC } from "react";
+import { FC } from "react";
 import StyledButton, { Spinner } from "./Button.styles";
 import StyledButtonProps from "../../../interfaces/StyledButtonProps";
 import ChildrenNodeProps from "src/interfaces/ChildrenNodeProps";
