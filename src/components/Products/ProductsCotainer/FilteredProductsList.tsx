@@ -1,4 +1,3 @@
-// FilteredProductsList.tsx
 import { useContext, useEffect, useMemo } from "react";
 import ProductsListing from "../ProductListing/ProductsListing";
 import Product from "src/interfaces/Product";

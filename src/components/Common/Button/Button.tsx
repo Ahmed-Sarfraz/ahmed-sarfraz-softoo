@@ -1,6 +1,7 @@
 import { ReactNode, FC } from "react";
 import StyledButton, { Spinner } from "./Button.styles";
 import StyledButtonProps from "../../../interfaces/StyledButtonProps";
+import ChildrenNodeProps from "src/interfaces/ChildrenNodeProps";
 
 enum ButtonVariant {
   Primary = "primary",
@@ -15,12 +16,7 @@ enum ButtonSize {
   Large = "large",
 }
 
-// Interface for Button Props
-interface ExtendedButtonProps extends StyledButtonProps {
-  children: ReactNode;
-}
-
-const Button: FC<ExtendedButtonProps> = ({
+const Button: FC<StyledButtonProps & ChildrenNodeProps> = ({
   children,
   variant = ButtonVariant.Primary,
   size = ButtonSize.Medium,

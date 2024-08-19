@@ -8,7 +8,6 @@ import {
 import calculateTotalPrice from "../../../utils/calculateTotalPrice";
 import { ProductsContextType } from "src/components/Products/context/types";
 
-// TotalQuantity.tsx
 const TotalQuantity = () => {
   const { products } = useContext(ProductsContext) as ProductsContextType;
   const totalPrice = useMemo(() => calculateTotalPrice(products), [products]);
