@@ -5,7 +5,7 @@ import {
   MessageText,
 } from "./NoProductsMessage.styles";
 
-const NoProductsMessage: React.FC = () => {
+const NoProductsMessage = () => {
   return (
     <MessageContainer>
       <MessageIcon>🛒</MessageIcon>

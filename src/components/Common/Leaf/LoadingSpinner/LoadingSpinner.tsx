@@ -1,7 +1,7 @@
 import React from "react";
 import { Spinner, SpinnerContainer } from "./LoadingSpinner.styles";
 
-const LoadingSpinner: React.FC = () => {
+const LoadingSpinner = () => {
   return (
     <SpinnerContainer>
       <Spinner data-testid="loading-spinner" />

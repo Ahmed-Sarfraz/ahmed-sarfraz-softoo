@@ -1,6 +1,6 @@
-import calculateTotalPrice from "../utils/calculateTotalPrice";
+import Product from "src/interfaces/Product";
 
-const mockProducts = [
+const mockProducts: Product[] = [
   {
     id: 1,
     colour: "Black",

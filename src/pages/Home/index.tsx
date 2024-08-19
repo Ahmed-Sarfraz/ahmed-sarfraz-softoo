@@ -4,7 +4,7 @@ import ProductColourFilter from "../../components/Products/ProductColourFilter/P
 import ProductsCotainer from "../../components/Products/ProductsCotainer/ProductsCotainer";
 import TotalQuantity from "../../components/Products/ProductQuantity/TotalQuantity";
 
-export default function Home() {
+const Home = () => {
   return (
     <ProductsProvider>
       <ProductColourFilter />
@@ -12,4 +12,6 @@ export default function Home() {
       <TotalQuantity />
     </ProductsProvider>
   );
-}
+};
+
+export default Home;

@@ -6,13 +6,17 @@ import {
   SummaryDetails,
 } from "./TotalQuantity.styles";
 import calculateTotalPrice from "../../../utils/calculateTotalPrice";
+import { ProductsContextType } from "src/components/Products/context/types";
 
-export default function TotalQuantity() {
-  const { products } = useContext(ProductsContext);
+// TotalQuantity.tsx
+const TotalQuantity = () => {
+  const { products } = useContext(ProductsContext) as ProductsContextType;
   const totalPrice = useMemo(() => calculateTotalPrice(products), [products]);
+
   if (!products.length) {
     return null;
   }
+
   return (
     <SummaryContainer>
       <SummaryDetails>
@@ -22,4 +26,6 @@ export default function TotalQuantity() {
       </SummaryDetails>
     </SummaryContainer>
   );
-}
+};
+
+export default TotalQuantity;

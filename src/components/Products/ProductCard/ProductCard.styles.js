@@ -13,7 +13,7 @@ const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   @media (min-width: 768px) {
-    flex-direction: row; /* Switch to row on larger screens */
+    flex-direction: row;
   }
 `;
 
@@ -29,7 +29,7 @@ const Card = styled.div`
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   @media (min-width: 768px) {
-    flex-direction: row; /* Switch to row on larger screens */
+    flex-direction: row;
     padding: 8px;
     border: 1px solid #ddd;
   }
@@ -38,18 +38,39 @@ const Card = styled.div`
 const CardImageWrapper = styled.div`
   background-color: #f4f4f4;
   height: 200px;
+  width: 250px;
+  border-radius: 8px;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const CardImage = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   display: block;
   border-radius: 8px;
 `;
 
+// const CardImageWrapper = styled.div`
+//   width: 30%;
+//   height: 150px; /* Fixed height */
+//   overflow: hidden;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// `;
+
+// const CardImage = styled.img`
+//   max-width: 100%;
+//   max-height: 100%;
+// `;
+
 const CardContent = styled.div`
   padding: 20px;
+  flex: 1;
 `;
 
 const ProductName = styled.h2`

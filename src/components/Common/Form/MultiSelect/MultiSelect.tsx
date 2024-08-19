@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { ElementRef, useRef, useState } from "react";
 import {
   ClearButton,
-  Dropdown,
   MultiSelectWrapper,
   NoOptions,
   Option,
@@ -11,8 +10,8 @@ import {
   SelectBox,
   SelectedItem,
 } from "./MultiSelect.styles";
+import Dropdown from "./Dropdown";
 
-// Define the interface for props
 type MultiSelectProps = {
   options?: string[];
   placeholder?: string;
@@ -26,11 +25,14 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
   ...props
 }) => {
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
-  const [isOpen, setIsOpen] = useState<boolean>(false);
   const [searchTerm, setSearchTerm] = useState<string>("");
-
-  const toggleDropdown = () => setIsOpen(!isOpen);
-
+  // NOTE
+  const dropdownRef = useRef<ElementRef<typeof Dropdown>>(null);
+  const toggleDropdown = () => {
+    if (dropdownRef.current) {
+      dropdownRef.current?.toggleDropdown();
+    }
+  };
   const handleSelectItem = (item: string) => {
     if (!selectedItems.includes(item)) {
       const newSelectedItems = [...selectedItems, item];
@@ -86,29 +88,27 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
           </ClearButton>
         )}
       </SelectBox>
-      {isOpen && (
-        <Dropdown data-testid="select-dropdown">
-          <SearchBox
-            type="text"
-            placeholder="Search..."
-            value={searchTerm}
-            onChange={handleSearch}
-          />
-          {filteredOptions.length > 0 ? (
-            filteredOptions.map((option) => (
-              <Option
-                data-testid={`option-${option}`}
-                key={option}
-                onClick={() => handleSelectItem(option)}
-              >
-                {option}
-              </Option>
-            ))
-          ) : (
-            <NoOptions>No options available</NoOptions>
-          )}
-        </Dropdown>
-      )}
+      <Dropdown ref={dropdownRef}>
+        <SearchBox
+          type="text"
+          placeholder="Search..."
+          value={searchTerm}
+          onChange={handleSearch}
+        />
+        {filteredOptions.length > 0 ? (
+          filteredOptions.map((option) => (
+            <Option
+              data-testid={`option-${option}`}
+              key={option}
+              onClick={() => handleSelectItem(option)}
+            >
+              {option}
+            </Option>
+          ))
+        ) : (
+          <NoOptions>No options available</NoOptions>
+        )}
+      </Dropdown>
     </MultiSelectWrapper>
   );
 };

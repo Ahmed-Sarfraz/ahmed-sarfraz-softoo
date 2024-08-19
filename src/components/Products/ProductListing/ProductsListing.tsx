@@ -1,9 +1,14 @@
+import React from "react";
 import NoProductsMessage from "../../Common/Leaf/NoProductsMessage/NoProductsMessage";
 import { CardContainer, CardWrapper } from "../ProductCard/ProductCard.styles";
 import ProductComponent from "../ProductCard/ProductCardComponent";
-import { productPropTypes } from "../ProductCard/productPropTypes";
-import PropTypes from "prop-types";
-export default function ProductsListing({ products = [] }) {
+import Product from "src/interfaces/Product";
+
+type ProductsListingProps = {
+  products?: Product[];
+};
+
+const ProductsListing: React.FC<ProductsListingProps> = ({ products = [] }) => {
   if (!products.length) return <NoProductsMessage />;
   return (
     <CardContainer data-testid="products-container">
@@ -14,8 +19,6 @@ export default function ProductsListing({ products = [] }) {
       ))}
     </CardContainer>
   );
-}
-
-ProductsListing.propTypes = {
-  products: PropTypes.arrayOf(productPropTypes).isRequired,
 };
+
+export default ProductsListing;

@@ -43,7 +43,7 @@ const RemoveIcon = styled.span`
   cursor: pointer;
 `;
 
-const Dropdown = styled.div`
+const StyledDropdown = styled.div`
   position: absolute;
   top: 100%;
   left: 0;
@@ -109,6 +109,6 @@ export {
   SelectedItem,
   SelectBox,
   RemoveIcon,
-  Dropdown,
+  StyledDropdown,
   MultiSelectWrapper,
 };

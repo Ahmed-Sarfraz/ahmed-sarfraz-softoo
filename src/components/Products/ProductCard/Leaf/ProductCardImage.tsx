@@ -5,7 +5,7 @@ import {
   CardImageWrapper,
 } from "src/components/Products/ProductCard/ProductCard.styles";
 
-const ProductCardImage: React.FC = () => {
+const ProductCardImage = () => {
   const product = useContext(ProductCardContext);
   return (
     <CardImageWrapper>

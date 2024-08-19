@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 
 import {
   QuantityButtonElement,
@@ -8,9 +8,10 @@ import {
 import ProductCardContext from "../context/ProductCardContext";
 import Button from "../../Common/Button/Button";
 import useProductQuantity from "./hooks/useProductQuantity";
+import Product from "src/interfaces/Product";
 
 const ProductQuantity = () => {
-  const { id, quantity } = useContext(ProductCardContext);
+  const { id, quantity } = useContext(ProductCardContext) as Product;
 
   const { increaseQuantity, decreaseQuantity, handleRemove } =
     useProductQuantity(id, quantity);

@@ -4,7 +4,7 @@ import ProductCardContent from "./Leaf/ProductCardContent";
 import ProductCardName from "./Leaf/ProductCardName";
 import ProductCardPrice from "./Leaf/ProductCardPrice";
 import ProductCardColourComponent from "./Leaf/ProductCardColour/ProductCardColourComponent";
-import ChildrenNodeProps from "src/interfaces/ChildrenNode";
+import ChildrenNodeProps from "src/interfaces/ChildrenNodeProps";
 
 const ProductCard: React.FC<ChildrenNodeProps> & {
   Image: typeof ProductCardImage;
