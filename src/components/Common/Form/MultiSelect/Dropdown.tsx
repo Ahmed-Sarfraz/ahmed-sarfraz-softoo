@@ -27,10 +27,7 @@ export default class Dropdown extends Component<ChildrenNodeProps, State> {
 
     return (
       isOpen && (
-        <StyledDropdown
-          data-testid="select-dropdown"
-          onClick={this.toggleDropdown}
-        >
+        <StyledDropdown data-testid="select-dropdown">
           {children}
         </StyledDropdown>
       )
