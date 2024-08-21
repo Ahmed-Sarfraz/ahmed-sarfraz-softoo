@@ -4,7 +4,7 @@ import { ProductsContextType } from "src/components/Products/context/types";
 import Product from "src/interfaces/Product";
 import { ProductsContext } from "src/components/Products/context/ProductsContext";
 
-const useProductQuantity = (id: number, initialQuantity: number = 1) => {
+const useProductQuantity = (id: number, initialQuantity: number = 0) => {
   const { setProducts, removeProduct } = useContext(
     ProductsContext
   ) as ProductsContextType;
@@ -28,7 +28,7 @@ const useProductQuantity = (id: number, initialQuantity: number = 1) => {
   }, [initialQuantity, updateItemQuantity]);
 
   const decreaseQuantity = useCallback(() => {
-    if (initialQuantity > 1) {
+    if (initialQuantity > 0) {
       updateItemQuantity(initialQuantity - 1);
     }
   }, [initialQuantity, updateItemQuantity]);

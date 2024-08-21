@@ -4,7 +4,7 @@ import {
   CardContainer,
   CardWrapper,
 } from "src/components/Products/ProductCard/ProductCard.styles";
-import ProductComponent from "src/components/Products/ProductCard/ProductCardComponent";
+import ProductCardComponent from "src/components/Products/ProductCard/ProductCardComponent";
 import Product from "src/interfaces/Product";
 
 type ProductsListingProps = {
@@ -17,7 +17,7 @@ const ProductsListing: React.FC<ProductsListingProps> = ({ products = [] }) => {
     <CardContainer data-testid="products-container">
       {products.map((product) => (
         <CardWrapper data-testid={`product-${product.id}`} key={product.id}>
-          <ProductComponent product={product} />
+          <ProductCardComponent product={product} />
         </CardWrapper>
       ))}
     </CardContainer>

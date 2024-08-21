@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useMemo } from "react";
 import Button from "src/components/Common/Button/Button";
 import ProductCardContext from "src/components/Products/context/ProductCardContext";
 import useProductQuantity from "src/components/Products/ProductQuantity/hooks/useProductQuantity";
@@ -15,16 +15,18 @@ const ProductQuantity = () => {
   const { increaseQuantity, decreaseQuantity, handleRemove } =
     useProductQuantity(id, quantity);
 
+  console.log("quantity component rerendered");
   return (
     <QuantityButtonWrapper>
       <div style={{ display: "flex" }}>
         <QuantityButtonElement
+          disabled={!quantity}
           data-testid={`decrease-${id}`}
           onClick={decreaseQuantity}
         >
           -
         </QuantityButtonElement>
-        <QuantityDisplay>{quantity}</QuantityDisplay>
+        <QuantityDisplay>{quantity ?? 0}</QuantityDisplay>
         <QuantityButtonElement
           data-testid={`increase-${id}`}
           onClick={increaseQuantity}

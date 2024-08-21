@@ -16,12 +16,9 @@ const FilteredProductsList: React.FC<FilteredProductsListProps> = ({
   ) as ProductsContextType;
 
   useEffect(() => {
-    const productsWithQuantities = initialProducts.map((item) => ({
-      ...item,
-      quantity: 1,
-    }));
-    setProducts(productsWithQuantities);
-  }, [initialProducts, setProducts]);
+    setProducts(initialProducts);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [initialProducts]);
 
   const filteredProducts = useMemo(() => {
     return filter.length === 0

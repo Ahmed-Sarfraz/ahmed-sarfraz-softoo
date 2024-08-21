@@ -12,16 +12,25 @@ export const QuantityButtonWrapper = styled.div`
 `;
 
 export const QuantityButtonElement = styled.button<ButtonProps>`
-  background-color: #f0f0f0;
   border: none;
+  border-radius: 4px;
   padding: 10px 15px;
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
   color: #333;
-
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  width: 50px;
   &:hover {
-    background-color: #e0e0e0;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  &:disabled {
+    background-color: #d0d0d0;
+    color: #999;
+    cursor: not-allowed;
+    opacity: 0.6;
+    box-shadow: none; /* Removes shadow for disabled state */
   }
 `;
 
@@ -31,8 +40,6 @@ export const QuantityDisplay = styled.div`
   font-weight: bold;
   background-color: #fff;
   color: #333;
-  border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
   min-width: 40px;
   text-align: center;
 `;

@@ -4,11 +4,15 @@ import ProductCard from "src/components/Products/ProductCard/ProductCard";
 import ProductQuantity from "src/components/Products/ProductQuantity/ProductQuantity";
 import Product from "src/interfaces/Product";
 
-type ProductComponentProps = {
+type ProductCardComponentProps = {
   product: Product;
 };
 
-const ProductComponent: React.FC<ProductComponentProps> = ({ product }) => {
+const ProductCardComponent: React.FC<ProductCardComponentProps> = ({
+  product,
+}) => {
+  console.log("product card component rerendered");
+
   return (
     <ProductCardContext.Provider value={product}>
       <ProductCard>
@@ -24,4 +28,4 @@ const ProductComponent: React.FC<ProductComponentProps> = ({ product }) => {
   );
 };
 
-export default ProductComponent;
+export default ProductCardComponent;
