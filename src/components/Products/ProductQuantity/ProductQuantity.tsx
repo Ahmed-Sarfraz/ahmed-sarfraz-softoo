@@ -14,35 +14,36 @@ const ProductQuantity = () => {
 
   const { increaseQuantity, decreaseQuantity, handleRemove } =
     useProductQuantity(id, quantity);
-
-  console.log("quantity component rerendered");
-  return (
-    <QuantityButtonWrapper>
-      <div style={{ display: "flex" }}>
-        <QuantityButtonElement
-          disabled={!quantity}
-          data-testid={`decrease-${id}`}
-          onClick={decreaseQuantity}
+  return useMemo(() => {
+    console.log("ProductQuantity rerendered");
+    return (
+      <QuantityButtonWrapper>
+        <div style={{ display: "flex" }}>
+          <QuantityButtonElement
+            disabled={!quantity}
+            data-testid={`decrease-${id}`}
+            onClick={decreaseQuantity}
+          >
+            -
+          </QuantityButtonElement>
+          <QuantityDisplay>{quantity ?? 0}</QuantityDisplay>
+          <QuantityButtonElement
+            data-testid={`increase-${id}`}
+            onClick={increaseQuantity}
+          >
+            +
+          </QuantityButtonElement>
+        </div>
+        <Button
+          data-testid={`remove-${id}`}
+          variant="danger"
+          onClick={handleRemove}
         >
-          -
-        </QuantityButtonElement>
-        <QuantityDisplay>{quantity ?? 0}</QuantityDisplay>
-        <QuantityButtonElement
-          data-testid={`increase-${id}`}
-          onClick={increaseQuantity}
-        >
-          +
-        </QuantityButtonElement>
-      </div>
-      <Button
-        data-testid={`remove-${id}`}
-        variant="danger"
-        onClick={handleRemove}
-      >
-        Remove
-      </Button>
-    </QuantityButtonWrapper>
-  );
+          Remove
+        </Button>
+      </QuantityButtonWrapper>
+    );
+  }, [quantity]);
 };
 
-export default ProductQuantity;
+export default React.memo(ProductQuantity);

@@ -11,7 +11,7 @@ type ProductCardComponentProps = {
 const ProductCardComponent: React.FC<ProductCardComponentProps> = ({
   product,
 }) => {
-  console.log("product card component rerendered");
+  console.log("ProductCardComponent rerendered");
 
   return (
     <ProductCardContext.Provider value={product}>
@@ -28,4 +28,4 @@ const ProductCardComponent: React.FC<ProductCardComponentProps> = ({
   );
 };
 
-export default ProductCardComponent;
+export default React.memo(ProductCardComponent);

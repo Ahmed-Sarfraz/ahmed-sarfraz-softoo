@@ -30,10 +30,7 @@ describe("ProductQuantity component", () => {
 
     // Correct Total Quantity is displayed after removal of first element
     const totalPrice = screen.getByTestId(`total-price`);
-    console.log(
-      mockProductsTotalPrice - products[0].price,
-      "mockProductsTotalPrice - products[0].price"
-    );
+
     expect(totalPrice).toHaveTextContent(
       (mockProductsTotalPrice - products[0].price).toFixed(2)
     );
