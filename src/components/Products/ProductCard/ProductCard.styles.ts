@@ -12,8 +12,12 @@ const CardWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   @media (min-width: 768px) {
     flex-direction: row;
+    border: none;
+    border-radius: 0px;
   }
 `;
 
@@ -27,11 +31,12 @@ const Card = styled.div`
   background-color: #fff;
   border: 1px solid #ddd;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  border-radius: 8px 8px 0px 0px;
   @media (min-width: 768px) {
     flex-direction: row;
     padding: 8px;
     border: 1px solid #ddd;
+    border-radius: 8px 8px 8px 8px;
   }
 `;
 
