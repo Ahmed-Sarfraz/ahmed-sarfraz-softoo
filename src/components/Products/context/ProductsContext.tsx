@@ -14,15 +14,15 @@ export const ProductsProvider: React.FC<ProductsProviderProps> = ({
   const [filter, setFilter] = useState<string[]>([]);
   const [products, setProducts] = useState<Product[]>(initialProducts);
 
-  const removeProduct = (id: number) => {
-    setProducts((prevProducts) =>
-      prevProducts.filter((product) => product.id !== id)
-    );
-  };
+  // const removeProduct = (id: number) => {
+  //   setProducts((prevProducts) =>
+  //     prevProducts.filter((product) => product.id !== id)
+  //   );
+  // };
 
   return (
     <ProductsContext.Provider
-      value={{ products, setProducts, removeProduct, setFilter, filter }}
+      value={{ products, setProducts, setFilter, filter }}
     >
       {children}
     </ProductsContext.Provider>

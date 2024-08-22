@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useContext, useCallback } from "react";
 import produce from "immer";
 import { ProductsContextType } from "src/components/Products/context/types";
@@ -5,9 +6,7 @@ import Product from "src/interfaces/Product";
 import { ProductsContext } from "src/components/Products/context/ProductsContext";
 
 const useProductQuantity = (id: number, initialQuantity: number = 0) => {
-  const { setProducts, removeProduct } = useContext(
-    ProductsContext
-  ) as ProductsContextType;
+  const { setProducts } = useContext(ProductsContext) as ProductsContextType;
 
   const updateItemQuantity = useCallback(
     (newQuantity: number) => {
@@ -33,14 +32,24 @@ const useProductQuantity = (id: number, initialQuantity: number = 0) => {
     }
   }, [initialQuantity, updateItemQuantity]);
 
+  const resetQuantity = useCallback(() => {
+    updateItemQuantity(0);
+  }, [updateItemQuantity]);
+
   const handleRemove = useCallback(() => {
-    removeProduct(id);
-  }, [id, removeProduct]);
+    // removeProduct(id);
+    resetQuantity();
+  }, []);
+
+  const handleAdd = useCallback(() => {
+    updateItemQuantity(1);
+  }, []);
 
   return {
     increaseQuantity,
     decreaseQuantity,
     handleRemove,
+    handleAdd,
     updateItemQuantity,
   };
 };

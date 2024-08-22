@@ -12,7 +12,7 @@ import Product from "src/interfaces/Product";
 const ProductQuantity = () => {
   const { id, quantity } = useContext(ProductCardContext) as Product;
 
-  const { increaseQuantity, decreaseQuantity, handleRemove } =
+  const { increaseQuantity, decreaseQuantity, handleRemove, handleAdd } =
     useProductQuantity(id, quantity);
   return useMemo(() => {
     console.log("ProductQuantity rerendered");
@@ -26,7 +26,9 @@ const ProductQuantity = () => {
           >
             -
           </QuantityButtonElement>
-          <QuantityDisplay>{quantity ?? 0}</QuantityDisplay>
+          <QuantityDisplay data-testid={`quantity-${id}`}>
+            {quantity ?? 0}
+          </QuantityDisplay>
           <QuantityButtonElement
             data-testid={`increase-${id}`}
             onClick={increaseQuantity}
@@ -34,16 +36,33 @@ const ProductQuantity = () => {
             +
           </QuantityButtonElement>
         </div>
-        <Button
-          data-testid={`remove-${id}`}
-          variant="danger"
-          onClick={handleRemove}
-        >
-          Remove
-        </Button>
+        {quantity ? (
+          <Button
+            data-testid={`remove-${id}`}
+            variant="danger"
+            onClick={handleRemove}
+          >
+            Remove from Cart
+          </Button>
+        ) : (
+          <Button
+            data-testid={`add-${id}`}
+            variant="primary"
+            onClick={handleAdd}
+          >
+            Add to Cart
+          </Button>
+        )}
       </QuantityButtonWrapper>
     );
-  }, [quantity]);
+  }, [
+    quantity,
+    id,
+    increaseQuantity,
+    handleRemove,
+    decreaseQuantity,
+    handleAdd,
+  ]);
 };
 
 export default React.memo(ProductQuantity);
