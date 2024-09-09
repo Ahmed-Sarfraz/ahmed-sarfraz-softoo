@@ -10,8 +10,8 @@ const ProductCardImage = () => {
   return (
     <CardImageWrapper>
       <CardImage
-        src={product?.img ?? "/assets/images/placeholder.jpg"}
-        alt={product?.name}
+        src={product?.images[0] ?? "/assets/images/placeholder.jpg"}
+        alt={product?.title}
       />
     </CardImageWrapper>
   );

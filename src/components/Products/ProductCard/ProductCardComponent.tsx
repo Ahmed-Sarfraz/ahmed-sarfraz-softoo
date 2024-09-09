@@ -20,13 +20,15 @@ const ProductCardComponent: React.FC<ProductCardComponentProps> = ({
         <ProductCard.Image />
         <ProductCard.Content>
           <ProductCard.Name />
-          <ProductDetails>
-            <ProductCard.Price />
-            <ProductCard.Colour />
-          </ProductDetails>
+          <div>
+            <ProductDetails>
+              <ProductCard.Price />
+              <ProductCard.Rating />
+            </ProductDetails>
+            <ProductQuantity />
+          </div>
         </ProductCard.Content>
       </ProductCard>
-      <ProductQuantity />
     </ProductCardContext.Provider>
   );
 };

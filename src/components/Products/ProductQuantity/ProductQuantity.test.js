@@ -3,7 +3,7 @@ import "@testing-library/jest-dom/extend-expect";
 import mockProducts from "src/mocks/mockProducts";
 import { ProductsProvider } from "../context/ProductsContext";
 import FilteredProductsList from "../ProductsCotainer/FilteredProductsList";
-import TotalQuantity from "./TotalQuantity";
+import ShoppingCart from "./ShoppingCart";
 
 describe("ProductQuantity component", () => {
   it("should add and remove the product from the cart and Total Quantity is updated", () => {
@@ -12,7 +12,7 @@ describe("ProductQuantity component", () => {
     render(
       <ProductsProvider>
         <FilteredProductsList initialProducts={products} />
-        <TotalQuantity />
+        <ShoppingCart />
       </ProductsProvider>
     );
     const QuantityElement = screen.getByTestId(`quantity-${id}`);
@@ -42,7 +42,7 @@ describe("ProductQuantity component", () => {
     render(
       <ProductsProvider>
         <FilteredProductsList initialProducts={products} />
-        <TotalQuantity />
+        <ShoppingCart />
       </ProductsProvider>
     );
 

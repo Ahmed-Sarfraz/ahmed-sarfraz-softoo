@@ -42,7 +42,7 @@ const ProductQuantity = () => {
             variant="danger"
             onClick={handleRemove}
           >
-            Remove from Cart
+            Remove
           </Button>
         ) : (
           <Button
@@ -50,7 +50,7 @@ const ProductQuantity = () => {
             variant="primary"
             onClick={handleAdd}
           >
-            Add to Cart
+            Add
           </Button>
         )}
       </QuantityButtonWrapper>

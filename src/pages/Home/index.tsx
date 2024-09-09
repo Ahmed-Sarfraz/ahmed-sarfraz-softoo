@@ -1,14 +1,14 @@
 import { ProductsProvider } from "src/components/Products/context/ProductsContext";
-import ProductColourFilter from "src/components/Products/ProductColourFilter/ProductColourFilter";
-import TotalQuantity from "src/components/Products/ProductQuantity/TotalQuantity";
+import ProductCategoryFilter from "src/components/Products/ProductCategoryFilter/ProductCategoryFilter";
+import ShoppingCart from "src/components/Products/ProductQuantity/ShoppingCart";
 import ProductsCotainer from "src/components/Products/ProductsCotainer/ProductsCotainer";
 import "./home.css";
 const Home = () => {
   return (
     <ProductsProvider>
       <div className="product-details">
-        <ProductColourFilter />
-        <TotalQuantity />
+        <ProductCategoryFilter />
+        <ShoppingCart />
       </div>
       <ProductsCotainer />
     </ProductsProvider>

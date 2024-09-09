@@ -9,8 +9,8 @@ export default function ProductColourFilter() {
     ProductsContext
   ) as ProductsContextType;
 
-  const colourFilters = useMemo(
-    () => getUniquePropertyValues(products, "colour"),
+  const categoryFilters = useMemo(
+    () => getUniquePropertyValues(products, "category"),
     [products]
   );
 
@@ -22,9 +22,9 @@ export default function ProductColourFilter() {
 
   return (
     <MultiSelect
-      data-testid="filter-colour"
-      placeholder="Select colour"
-      options={colourFilters}
+      data-testid="filter-category"
+      placeholder="Select category"
+      options={categoryFilters}
       onChange={handleFilterChange}
     />
   );

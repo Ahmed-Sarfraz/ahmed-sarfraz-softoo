@@ -4,7 +4,7 @@ import { ProductName } from "src/components/Products/ProductCard/ProductCard.sty
 
 const ProductCardName = () => {
   const product = useContext(ProductCardContext);
-  return <ProductName className="clamp-text">{product?.name}</ProductName>;
+  return <ProductName className="clamp-text">{product?.title}</ProductName>;
 };
 
 export default ProductCardName;

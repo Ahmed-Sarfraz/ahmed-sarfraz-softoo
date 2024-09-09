@@ -1,4 +1,4 @@
-import ProductCardColourComponent from "src/components/Products/ProductCard/Leaf/ProductCardColour/ProductCardColourComponent";
+import ProductCardRatingComponent from "src/components/Products/ProductCard/Leaf/ProductCardRating/ProductCardRatingComponent";
 import ProductCardContent from "src/components/Products/ProductCard/Leaf/ProductCardContent";
 import ProductCardImage from "src/components/Products/ProductCard/Leaf/ProductCardImage";
 import ProductCardName from "src/components/Products/ProductCard/Leaf/ProductCardName";
@@ -8,7 +8,7 @@ import ChildrenNodeProps from "src/interfaces/ChildrenNodeProps";
 
 const ProductCard: React.FC<ChildrenNodeProps> & {
   Image: typeof ProductCardImage;
-  Colour: typeof ProductCardColourComponent;
+  Rating: typeof ProductCardRatingComponent;
   Content: typeof ProductCardContent;
   Name: typeof ProductCardName;
   Price: typeof ProductCardPrice;
@@ -17,7 +17,7 @@ const ProductCard: React.FC<ChildrenNodeProps> & {
 };
 
 ProductCard.Image = ProductCardImage;
-ProductCard.Colour = ProductCardColourComponent;
+ProductCard.Rating = ProductCardRatingComponent;
 ProductCard.Content = ProductCardContent;
 ProductCard.Name = ProductCardName;
 ProductCard.Price = ProductCardPrice;

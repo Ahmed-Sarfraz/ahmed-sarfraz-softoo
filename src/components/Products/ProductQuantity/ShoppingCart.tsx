@@ -4,7 +4,7 @@ import { ProductsContextType } from "src/components/Products/context/types";
 import {
   Price,
   SummaryContainer,
-} from "src/components/Products/ProductQuantity/TotalQuantity.styles";
+} from "src/components/Products/ProductQuantity/ShoppingCart.styles";
 import calculateTotalPrice from "src/utils/calculateTotalPrice";
 
 const TotalQuantity = () => {

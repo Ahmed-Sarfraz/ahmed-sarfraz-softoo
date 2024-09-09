@@ -32,7 +32,7 @@ describe("FilteredProductsList Component", () => {
     products.forEach((product) => {
       const productElement = screen.getByTestId(`product-${product.id}`);
       expect(productElement).toBeInTheDocument();
-      expect(productElement).toHaveTextContent(product.name);
+      expect(productElement).toHaveTextContent(product.title);
     });
 
     // Check if the number of product elements matches the length of the products array

@@ -3,14 +3,21 @@ import FilteredProductsList from "src/components/Products/ProductsCotainer/Filte
 import Product from "src/interfaces/Product";
 import { ENDPOINTS } from "src/middleware/url";
 
+interface ApiResponse {
+  products: Product[];
+  [key: string]: any;
+}
+
 const ProductsCotainer = () => {
   return (
-    <ApiDataRenderer<Product[]>
+    <ApiDataRenderer<ApiResponse>
       config={{
         url: ENDPOINTS.GET_ITEMS,
       }}
       renderData={(initialProducts) => (
-        <FilteredProductsList initialProducts={initialProducts || []} />
+        <FilteredProductsList
+          initialProducts={initialProducts?.products || []}
+        />
       )}
     />
   );

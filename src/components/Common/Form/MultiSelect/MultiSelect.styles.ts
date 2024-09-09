@@ -15,6 +15,7 @@ const MultiSelectWrapper = styled.div`
 const SelectBox = styled.div`
   display: flex;
   flex-wrap: wrap;
+  gap: 4px;
   align-items: center;
   padding: 10px;
   background-color: #fff;

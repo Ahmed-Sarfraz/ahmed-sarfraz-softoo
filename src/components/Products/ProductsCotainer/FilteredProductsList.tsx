@@ -23,7 +23,7 @@ const FilteredProductsList: React.FC<FilteredProductsListProps> = ({
   const filteredProducts = useMemo(() => {
     return filter.length === 0
       ? products
-      : products.filter((product) => filter.includes(product.colour));
+      : products.filter((product) => filter.includes(product.category));
   }, [products, filter]);
 
   return <ProductsListing products={filteredProducts} />;

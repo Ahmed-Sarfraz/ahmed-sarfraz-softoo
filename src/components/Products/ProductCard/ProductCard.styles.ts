@@ -2,16 +2,15 @@ import styled from "styled-components";
 
 const CardContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   margin: 10px 0px;
-  grid-gap: 8px;
+  grid-gap: 24px;
 `;
 
 const CardWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  border: 1px solid #ddd;
   border-radius: 8px;
   @media (min-width: 768px) {
     flex-direction: column;
@@ -27,15 +26,14 @@ const Card = styled.div`
   width: 100%;
   box-sizing: border-box;
   padding: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   background-color: #fff;
   border: 1px solid #ddd;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px 8px 0px 0px;
+  border-radius: 8px;
   @media (min-width: 768px) {
     flex-direction: column;
     padding: 8px;
-    border-radius: 8px 8px 8px 8px;
     flex: 1;
   }
 `;
@@ -52,7 +50,7 @@ const CardImageWrapper = styled.div`
 const CardImage = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
   display: block;
   border-radius: 8px;
 `;
@@ -79,7 +77,10 @@ const CardContent = styled.div`
   flex: 1;
 `;
 
-const ProductDetails = styled.div``;
+const ProductDetails = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
 const ProductName = styled.h2`
   font-size: 1.5rem;
