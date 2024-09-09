@@ -5,7 +5,7 @@ const StyledButton = styled.button<StyledButtonProps>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 172px;
   padding: ${(props) =>
     props.size === "large"
       ? "12px 24px"

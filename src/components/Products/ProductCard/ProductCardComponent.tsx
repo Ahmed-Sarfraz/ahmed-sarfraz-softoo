@@ -1,6 +1,7 @@
 import React from "react";
 import ProductCardContext from "src/components/Products/context/ProductCardContext";
 import ProductCard from "src/components/Products/ProductCard/ProductCard";
+import { ProductDetails } from "src/components/Products/ProductCard/ProductCard.styles";
 import ProductQuantity from "src/components/Products/ProductQuantity/ProductQuantity";
 import Product from "src/interfaces/Product";
 
@@ -19,8 +20,10 @@ const ProductCardComponent: React.FC<ProductCardComponentProps> = ({
         <ProductCard.Image />
         <ProductCard.Content>
           <ProductCard.Name />
-          <ProductCard.Price />
-          <ProductCard.Colour />
+          <ProductDetails>
+            <ProductCard.Price />
+            <ProductCard.Colour />
+          </ProductDetails>
         </ProductCard.Content>
       </ProductCard>
       <ProductQuantity />

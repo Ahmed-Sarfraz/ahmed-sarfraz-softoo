@@ -14,7 +14,7 @@ const MainWrapper = styled.div`
 const ContentSection = styled.main`
   flex: 1;
   padding: 2rem;
-  background-color: #fff;
+  background-color: #f8f9fa;
 `;
 
 export { PageWrapper, MainWrapper, ContentSection };

@@ -4,7 +4,6 @@ import { ProductsContextType } from "src/components/Products/context/types";
 import {
   Price,
   SummaryContainer,
-  SummaryDetails,
 } from "src/components/Products/ProductQuantity/TotalQuantity.styles";
 import calculateTotalPrice from "src/utils/calculateTotalPrice";
 
@@ -18,11 +17,10 @@ const TotalQuantity = () => {
 
   return (
     <SummaryContainer>
-      <SummaryDetails>
-        <Price data-testid="total-price">
-          Total Price: ${totalPrice.toFixed(2)}
-        </Price>
-      </SummaryDetails>
+      <Price data-testid="total-price">
+        <i className="fas fa-shopping-cart centered"></i>
+        {totalPrice.toFixed(2)}
+      </Price>
     </SummaryContainer>
   );
 };

@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
 const CardContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   margin: 10px 0px;
-  gap: 8px;
+  grid-gap: 8px;
 `;
 
 const CardWrapper = styled.div`
@@ -15,7 +14,7 @@ const CardWrapper = styled.div`
   border: 1px solid #ddd;
   border-radius: 8px;
   @media (min-width: 768px) {
-    flex-direction: row;
+    flex-direction: column;
     border: none;
     border-radius: 0px;
   }
@@ -24,6 +23,7 @@ const CardWrapper = styled.div`
 const Card = styled.div`
   display: flex;
   flex-direction: column;
+  flex: 1;
   width: 100%;
   box-sizing: border-box;
   padding: 16px;
@@ -33,19 +33,17 @@ const Card = styled.div`
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px 8px 0px 0px;
   @media (min-width: 768px) {
-    flex-direction: row;
+    flex-direction: column;
     padding: 8px;
-    border: 1px solid #ddd;
     border-radius: 8px 8px 8px 8px;
+    flex: 1;
   }
 `;
 
 const CardImageWrapper = styled.div`
   background-color: #f4f4f4;
   height: 200px;
-  width: 250px;
   border-radius: 8px;
-
   @media (max-width: 600px) {
     width: 100%;
   }
@@ -74,9 +72,14 @@ const CardImage = styled.img`
 // `;
 
 const CardContent = styled.div`
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  justify-content: space-between;
   flex: 1;
 `;
+
+const ProductDetails = styled.div``;
 
 const ProductName = styled.h2`
   font-size: 1.5rem;
@@ -106,4 +109,5 @@ export {
   ProductName,
   ProductPrice,
   ProductColour,
+  ProductDetails,
 };
