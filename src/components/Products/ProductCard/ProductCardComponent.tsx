@@ -12,8 +12,6 @@ type ProductCardComponentProps = {
 const ProductCardComponent: React.FC<ProductCardComponentProps> = ({
   product,
 }) => {
-  console.log("ProductCardComponent rerendered");
-
   return (
     <ProductCardContext.Provider value={product}>
       <ProductCard>

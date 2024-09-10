@@ -5,108 +5,58 @@ const StyledButton = styled.button<StyledButtonProps>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: ${(props) =>
-    props.size === "large"
-      ? "12px 24px"
-      : props.size === "small"
-      ? "8px 16px"
-      : "10px 20px"};
-  font-size: ${(props) =>
-    props.size === "large" ? "16px" : props.size === "small" ? "12px" : "14px"};
+  padding: ${({ theme, size }) => {
+    return theme.button.sizes[size || "medium"]?.padding;
+  }};
+  font-size: ${({ theme, size }) =>
+    theme.button.sizes[size || "medium"]?.fontSize};
   font-weight: 600;
-  border-radius: ${(props) => (props.rounded ? "50px" : "4px")};
+  border-radius: ${({ theme, rounded }) =>
+    rounded
+      ? theme.button.borderRadius.rounded
+      : theme.button.borderRadius.normal};
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 
-  ${(props) =>
-    props.variant === "primary" &&
+  ${({ theme, variant }) =>
+    variant &&
     css`
-      background-color: #007bff;
-      color: #fff;
+      background-color: ${theme.button.variants[variant].backgroundColor};
+      color: ${theme.button.variants[variant].color};
       &:hover {
-        background-color: #0056b3;
+        background-color: ${theme.button.variants[variant].hover
+          .backgroundColor};
       }
     `}
 
-  ${(props) =>
-    props.variant === "secondary" &&
-    css`
-      background-color: #6c757d;
-      color: #fff;
-      &:hover {
-        background-color: #5a6268;
-      }
-    `}
-
-  ${(props) =>
-    props.variant === "danger" &&
-    css`
-      background-color: #dc3545;
-      color: #fff;
-      &:hover {
-        background-color: #c82333;
-      }
-    `}
-
-  ${(props) =>
-    props.variant === "success" &&
-    css`
-      background-color: #28a745;
-      color: #fff;
-      &:hover {
-        background-color: #218838;
-      }
-    `}
-
-  ${(props) =>
-    props.outline &&
+  ${({ theme, outline, variant }) =>
+    outline &&
+    variant &&
     css`
       background-color: transparent;
-      border: 2px solid
-        ${(props: any) =>
-          props.variant === "primary"
-            ? "#007bff"
-            : props.variant === "secondary"
-            ? "#6c757d"
-            : props.variant === "danger"
-            ? "#dc3545"
-            : "#28a745"};
-      color: ${(props: any) =>
-        props.variant === "primary"
-          ? "#007bff"
-          : props.variant === "secondary"
-          ? "#6c757d"
-          : props.variant === "danger"
-          ? "#dc3545"
-          : "#28a745"};
+      border: 2px solid ${theme.button.variants.outline.borderColor[variant]};
+      color: ${theme.button.variants.outline.borderColor[variant]};
       &:hover {
-        background-color: ${(props: any) =>
-          props.variant === "primary"
-            ? "#007bff"
-            : props.variant === "secondary"
-            ? "#6c757d"
-            : props.variant === "danger"
-            ? "#dc3545"
-            : "#28a745"};
+        background-color: ${theme.button.variants[variant].backgroundColor};
         color: #fff;
       }
     `}
 
-  ${(props) =>
-    props.disabled &&
+  ${({ theme, disabled }) =>
+    disabled &&
     css`
-      background-color: #e0e0e0;
-      color: #6c757d;
+      background-color: ${theme.button.variants.disabled.backgroundColor};
+      color: ${theme.button.variants.disabled.color};
       cursor: not-allowed;
       &:hover {
-        background-color: #e0e0e0;
-        color: #6c757d;
+        background-color: ${theme.button.variants.disabled.backgroundColor};
+        color: ${theme.button.variants.disabled.color};
       }
     `}
 
-  ${(props) =>
-    props.loading &&
+  ${({ loading }) =>
+    loading &&
     css`
       cursor: wait;
       pointer-events: none;

@@ -4,13 +4,17 @@ import { ProductsProvider } from "../context/ProductsContext";
 import ProductCategoryFilter from "./ProductCategoryFilter";
 import FilteredProductsList from "../ProductsCotainer/FilteredProductsList";
 import mockProducts from "src/mocks/mockProducts";
+import { theme } from "src/themes/theme";
+import { ThemeProvider } from "styled-components";
 
 test("displays the correct products when filter is applied", () => {
   render(
-    <ProductsProvider>
-      <ProductCategoryFilter />
-      <FilteredProductsList initialProducts={mockProducts} />
-    </ProductsProvider>
+    <ThemeProvider theme={theme}>
+      <ProductsProvider>
+        <ProductCategoryFilter />
+        <FilteredProductsList initialProducts={mockProducts} />
+      </ProductsProvider>
+    </ThemeProvider>
   );
 
   // Find and click the filter dropdown

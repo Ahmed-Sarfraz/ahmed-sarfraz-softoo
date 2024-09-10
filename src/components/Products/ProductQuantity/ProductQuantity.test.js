@@ -4,16 +4,20 @@ import mockProducts from "src/mocks/mockProducts";
 import { ProductsProvider } from "../context/ProductsContext";
 import FilteredProductsList from "../ProductsCotainer/FilteredProductsList";
 import ShoppingCart from "./ShoppingCart";
+import { ThemeProvider } from "styled-components";
+import { theme } from "src/themes/theme";
 
 describe("ProductQuantity component", () => {
   it("should add and remove the product from the cart and Total Quantity is updated", () => {
     const products = mockProducts;
     const { id } = products[0];
     render(
-      <ProductsProvider>
-        <FilteredProductsList initialProducts={products} />
-        <ShoppingCart />
-      </ProductsProvider>
+      <ThemeProvider theme={theme}>
+        <ProductsProvider>
+          <FilteredProductsList initialProducts={products} />
+          <ShoppingCart />
+        </ProductsProvider>
+      </ThemeProvider>
     );
     const QuantityElement = screen.getByTestId(`quantity-${id}`);
 
@@ -30,20 +34,25 @@ describe("ProductQuantity component", () => {
     fireEvent.click(removeButton);
     expect(QuantityElement).toHaveTextContent(0);
 
-    // Correct Total Quantity is displayed
+    // Correct Total Quantity is displayed after increase and decrease
     const totalPrice = screen.getByTestId(`total-price`);
+    fireEvent.mouseOver(totalPrice);
 
-    expect(totalPrice).toHaveTextContent(0);
+    const priceDisplay = screen.getByTestId(`tooltip-price`);
+
+    expect(priceDisplay).toHaveTextContent(0);
   });
 
   it("Item Quantity and Total Quantity is updated when quantity of specific item is increased or decreased", () => {
     const products = mockProducts;
     const { id, price } = products[0];
     render(
-      <ProductsProvider>
-        <FilteredProductsList initialProducts={products} />
-        <ShoppingCart />
-      </ProductsProvider>
+      <ThemeProvider theme={theme}>
+        <ProductsProvider>
+          <FilteredProductsList initialProducts={products} />
+          <ShoppingCart />
+        </ProductsProvider>
+      </ThemeProvider>
     );
 
     const QuantityElement = screen.getByTestId(`quantity-${id}`);
@@ -66,7 +75,11 @@ describe("ProductQuantity component", () => {
 
     // Correct Total Quantity is displayed after increase and decrease
     const totalPrice = screen.getByTestId(`total-price`);
+    fireEvent.mouseOver(totalPrice);
+
+    const priceDisplay = screen.getByTestId(`tooltip-price`);
+
     const updatedPrice = (updatedQuantity * price).toFixed(2);
-    expect(totalPrice).toHaveTextContent(updatedPrice);
+    expect(priceDisplay).toHaveTextContent(updatedPrice);
   });
 });

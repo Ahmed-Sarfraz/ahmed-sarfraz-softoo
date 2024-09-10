@@ -2,13 +2,17 @@ import { render, screen } from "@testing-library/react";
 import FilteredProductsList from "./FilteredProductsList";
 import { ProductsProvider } from "../context/ProductsContext";
 import mockProducts from "src/mocks/mockProducts";
+import { ThemeProvider } from "styled-components";
+import { theme } from "src/themes/theme";
 
 describe("FilteredProductsList Component", () => {
   it("should display NoProductsMessage when no products are available", () => {
     render(
-      <ProductsProvider>
-        <FilteredProductsList initialProducts={[]} />
-      </ProductsProvider>
+      <ThemeProvider theme={theme}>
+        <ProductsProvider>
+          <FilteredProductsList initialProducts={[]} />
+        </ProductsProvider>
+      </ThemeProvider>
     );
     // Check if the NoProductsMessage is displayed
     const noProductsMessage = screen.getByTestId("noproducts-message");
@@ -19,9 +23,11 @@ describe("FilteredProductsList Component", () => {
     const products = mockProducts;
 
     render(
-      <ProductsProvider>
-        <FilteredProductsList initialProducts={products} />
-      </ProductsProvider>
+      <ThemeProvider theme={theme}>
+        <ProductsProvider>
+          <FilteredProductsList initialProducts={products} />
+        </ProductsProvider>
+      </ThemeProvider>
     );
 
     // Check if the products container is rendered

@@ -51,7 +51,7 @@ const StyledDropdown = styled.div`
   border-radius: 8px;
   margin-top: 5px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  z-index: 10;
+  z-index: 20;
   max-height: 200px;
   overflow-y: auto;
 `;
