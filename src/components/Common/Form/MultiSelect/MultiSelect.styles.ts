@@ -22,7 +22,6 @@ const SelectBox = styled.div`
   border: 2px solid #ccc;
   border-radius: 8px;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 `;
 
 const SelectedItem = styled.div`
@@ -50,7 +49,6 @@ const StyledDropdown = styled.div`
   border: 2px solid #ccc;
   border-radius: 8px;
   margin-top: 5px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   z-index: 20;
   max-height: 200px;
   overflow-y: auto;
@@ -84,6 +82,7 @@ const Placeholder = styled.div`
   color: #999;
   font-size: 14px;
   padding: 5px;
+  user-select: none;
 `;
 
 const ClearButton = styled.button<ButtonProps>`

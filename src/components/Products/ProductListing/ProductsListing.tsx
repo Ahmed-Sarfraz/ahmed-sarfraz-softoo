@@ -5,6 +5,7 @@ import {
   CardWrapper,
 } from "src/components/Products/ProductCard/ProductCard.styles";
 import ProductCardComponent from "src/components/Products/ProductCard/ProductCardComponent";
+import useLazyLoadList from "src/hooks/useLazyLoadList";
 import Product from "src/interfaces/Product";
 
 type ProductsListingProps = {
@@ -12,14 +13,18 @@ type ProductsListingProps = {
 };
 
 const ProductsListing: React.FC<ProductsListingProps> = ({ products = [] }) => {
-  if (!products.length) return <NoProductsMessage />;
+  const { visibleItems: productsList, loaderRef } =
+    useLazyLoadList<Product>(products);
+
+  if (!productsList.length) return <NoProductsMessage />;
   return (
     <CardContainer data-testid="products-container">
-      {products.map((product) => (
+      {productsList.map((product) => (
         <CardWrapper data-testid={`product-${product.id}`} key={product.id}>
           <ProductCardComponent product={product} />
         </CardWrapper>
       ))}
+      <div ref={loaderRef} style={{ height: "1px" }}></div>
     </CardContainer>
   );
 };

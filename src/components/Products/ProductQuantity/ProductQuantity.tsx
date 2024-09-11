@@ -15,7 +15,6 @@ const ProductQuantity = () => {
   const { increaseQuantity, decreaseQuantity, handleRemove, handleAdd } =
     useProductQuantity(id, quantity);
   return useMemo(() => {
-    console.log("ProductQuantity rerendered");
     return (
       <QuantityButtonWrapper>
         <div style={{ display: "flex" }}>
