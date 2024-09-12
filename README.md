@@ -1,8 +1,8 @@
-# Responsive Products List Page
+## RESPONSIVE PRODUCTS LIST PAGE
 
 This project is a small demonstration of a responsive products list page for an e-commerce app. It is primarily focused on showcasing the approach to creating reusable components and optimizing them using best practices in React and TypeScript. The project is designed with scalability in mind and adheres to SOLID principles.
 
-## Features
+## FEATURES
 
 Responsive Layout: The product list page is designed to be fully responsive, ensuring optimal display on all screen sizes.
 
@@ -25,5 +25,5 @@ Additional Features: Add more pages like shopping cart and ntegrating payment us
 
 Cypress: E2E testing using cypress.
 
-## Live Url
+## LIVE URL
 https://ahmed-sarfraz-products-list.vercel.app/
