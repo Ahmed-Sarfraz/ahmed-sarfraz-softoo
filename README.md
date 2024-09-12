@@ -17,3 +17,6 @@ Dynamic Lazy Loading: Implemented lazy loading for components to optimize perfor
 Testing with Jest: Unit tests are written using Jest to ensure reliability and robustness of components.
 
 Scalability: The project is built with scalability in mind, adhering to SOLID principles.
+
+## Live Url
+https://ahmed-sarfraz-products-list.vercel.app/
