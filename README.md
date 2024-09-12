@@ -18,5 +18,12 @@ Testing with Jest: Unit tests are written using Jest to ensure reliability and r
 
 Scalability: The project is built with scalability in mind, adhering to SOLID principles.
 
+## FUTURE PLANS
+Code Refactoring: Improve the code structure to enhance readability, maintainability, and scalability.
+
+Additional Features: Add more pages like shopping cart and ntegrating payment using strip.
+
+Cypress: E2E testing using cypress.
+
 ## Live Url
 https://ahmed-sarfraz-products-list.vercel.app/
